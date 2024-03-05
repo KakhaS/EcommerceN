@@ -16,6 +16,7 @@ struct LoginView: View {
             .frame(width: 150, height: 150)
             .padding()
         Text(viewModel.mainTitle)
+   
     }
 }
 
