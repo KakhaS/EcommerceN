@@ -18,6 +18,7 @@
 		A157FD422B964AF0008FD7E1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A157FD412B964AF0008FD7E1 /* LoginView.swift */; };
 		A157FD442B964E9E008FD7E1 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A157FD432B964E9E008FD7E1 /* RegistrationView.swift */; };
 		A157FD462B964EA9008FD7E1 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A157FD452B964EA9008FD7E1 /* RegistrationViewModel.swift */; };
+		A19760762B977F1A009E7C99 /* CustomStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19760742B977F14009E7C99 /* CustomStructs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		A157FD412B964AF0008FD7E1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A157FD432B964E9E008FD7E1 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		A157FD452B964EA9008FD7E1 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		A19760742B977F14009E7C99 /* CustomStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStructs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			children = (
 				A157FD122B9649C3008FD7E1 /* EcommerceApp.swift */,
 				A157FD142B9649C3008FD7E1 /* ContentView.swift */,
+				A19760742B977F14009E7C99 /* CustomStructs.swift */,
 				A157FD402B964ACD008FD7E1 /* LoginScreen */,
 				A157FD472B964EAE008FD7E1 /* RegistrationScreen */,
 				A157FD182B9649C3008FD7E1 /* Preview Content */,
@@ -290,6 +293,7 @@
 				A157FD152B9649C3008FD7E1 /* ContentView.swift in Sources */,
 				A157FD422B964AF0008FD7E1 /* LoginView.swift in Sources */,
 				A157FD132B9649C3008FD7E1 /* EcommerceApp.swift in Sources */,
+				A19760762B977F1A009E7C99 /* CustomStructs.swift in Sources */,
 				A157FD442B964E9E008FD7E1 /* RegistrationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,12 +7,33 @@
 
 import SwiftUI
 
-struct CustomStructs: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
 
-#Preview {
-    CustomStructs()
+struct MyTextField: View {
+    var imageName: String
+    var text: String
+    
+    var body: some View {
+        @State var email: String = ""
+        HStack {
+            Image(systemName: imageName)
+            TextField(text, text: $email)
+        }
+        .textFieldStyle(RoundedBorderTextFieldStyle())
+        .padding()
+    }
+    
+}
+struct MyButton: View {
+    var buttonText: String
+   
+    var body: some View {
+   Text(buttonText)
+        .padding()
+        .foregroundColor(.white)
+                      .font(.system(size: 16, weight: .semibold))
+                      .frame(width: 150, height: 40)
+                      .background(.black)
+                      .cornerRadius(15)
+    }
+
 }
