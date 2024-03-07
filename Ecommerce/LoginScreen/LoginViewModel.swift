@@ -12,7 +12,8 @@ class LoginViewModel: ObservableObject {
     let mainTitle: String = "Greetings"
     let emailLogo: String = "tray.circle"
     let passwordLogo: String = "lock.circle"
-    
+    @Published var typedEmail: String = ""
+    @Published var typedPassword: String = ""
     
     func SignInButtonPressed() {
         print("pressed")

@@ -20,10 +20,16 @@ struct LoginView: View {
                 .padding()
             MyTextField(imageName: viewModel.emailLogo, text: "Email...")
             MyTextField(imageName: viewModel.passwordLogo, text: "Password...")
-           MyButton(buttonText: "Sign In")
+            Button("SignIn") {
+              print("Sing in Pressed ")
+            }
+            .buttonStyle(MyButton())
             Divider()
                 .padding()
-            MyButton(buttonText: "Sign Up")
+              Button("SignUp") {
+            print("Sign UP ")
+          }
+          .buttonStyle(MyButton())
         }
         Spacer()
     }

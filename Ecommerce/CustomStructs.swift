@@ -23,17 +23,18 @@ struct MyTextField: View {
     }
     
 }
-struct MyButton: View {
-    var buttonText: String
-   
-    var body: some View {
-   Text(buttonText)
-        .padding()
-        .foregroundColor(.white)
-                      .font(.system(size: 16, weight: .semibold))
-                      .frame(width: 150, height: 40)
-                      .background(.black)
-                      .cornerRadius(15)
-    }
 
+struct MyButton: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding()
+            .padding()
+                   .foregroundColor(.white)
+                                 .font(.system(size: 16, weight: .semibold))
+                                 .frame(width: 150, height: 40)
+                                 .background(.black)
+                                 .cornerRadius(15)
+                        .scaleEffect(configuration.isPressed ? 1.2 : 1)
+                        .animation(.easeOut(duration: 0.2), value: configuration.isPressed)
+    }
 }
