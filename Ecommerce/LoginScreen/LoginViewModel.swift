@@ -8,7 +8,17 @@
 import Foundation
 
 class LoginViewModel: ObservableObject {
-    @Published var mainLogo: String = "MainLogo"
-    @Published var mainTitle: String = "Hello"
+    let mainLogo: String = "MainLogo"
+    let mainTitle: String = "Greetings"
+    let emailLogo: String = "tray.circle"
+    let passwordLogo: String = "lock.circle"
     
+    
+    func SignInButtonPressed() {
+        print("pressed")
+    }
+    func SignUpButtonPressed() {
+        print("pressed")
+    }
 }
+
