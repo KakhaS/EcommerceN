@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct LoginView: View {
-    @ObservedObject var viewModel: LoginViewModel
-
+    @StateObject var viewModel: LoginViewModel
+    
+    init() {
+        _viewModel = StateObject(wrappedValue: LoginViewModel())
+    }
+    
     var body: some View {
         VStack {
             Image(viewModel.mainLogo)
@@ -21,21 +25,22 @@ struct LoginView: View {
             MyTextField(imageName: viewModel.emailLogo, text: "Email...")
             MyTextField(imageName: viewModel.passwordLogo, text: "Password...")
             Button("SignIn") {
-              print("Sing in Pressed ")
-            }
-            .buttonStyle(MyButton())
-            Divider()
-                .padding()
-              Button("SignUp") {
-            print("Sign UP ")
-          }
-          .buttonStyle(MyButton())
+                print("Sing in Pressed ")
         }
-        Spacer()
+                    .buttonStyle(MyButton())
+                Divider()
+                    .padding()
+                Button("SignUp") {
+                    print("Sign UP ")
+                }
+                .buttonStyle(MyButton())
+            }
+            Spacer()
+        }
     }
-}
+
 
 #Preview {
-    LoginView(viewModel: LoginViewModel())
+    LoginView()
 }
 
