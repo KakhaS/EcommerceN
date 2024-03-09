@@ -9,14 +9,14 @@ import SwiftUI
 
 
 struct MyTextField: View {
-    var imageName: String
-    var text: String
+    var imageName: String?
+    var placeHolder: String
+    var text: Binding<String>
     
     var body: some View {
-        @State var email: String = ""
         HStack {
-            Image(systemName: imageName)
-            TextField(text, text: $email)
+            Image(systemName: imageName ?? "")
+            TextField(placeHolder, text: text)
         }
         .textFieldStyle(RoundedBorderTextFieldStyle())
         .padding()
@@ -25,6 +25,8 @@ struct MyTextField: View {
 }
 
 struct MyButton: ButtonStyle {
+    let myColor: Color
+    let myOpacity: Double
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .padding()
@@ -32,9 +34,34 @@ struct MyButton: ButtonStyle {
                    .foregroundColor(.white)
                                  .font(.system(size: 16, weight: .semibold))
                                  .frame(width: 150, height: 40)
-                                 .background(.black)
+                                 .background(myColor)
                                  .cornerRadius(15)
+                                 .opacity(myOpacity)
                         .scaleEffect(configuration.isPressed ? 1.2 : 1)
                         .animation(.easeOut(duration: 0.2), value: configuration.isPressed)
+                        .padding()
+    }
+}
+
+
+struct CheckboxToggleStyle: ToggleStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        HStack {
+ 
+            RoundedRectangle(cornerRadius: 5.0)
+                .stroke(lineWidth: 2)
+                .frame(width: 25, height: 25)
+                .cornerRadius(5.0)
+                .overlay {
+                    Image(systemName: configuration.isOn ? "checkmark" : "")
+                }
+                .onTapGesture {
+                    withAnimation(.spring()) {
+                        configuration.isOn.toggle()
+                    }
+                }
+            configuration.label
+        }
+        .padding()
     }
 }

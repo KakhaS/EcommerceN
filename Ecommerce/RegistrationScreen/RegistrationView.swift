@@ -7,12 +7,33 @@
 
 import SwiftUI
 
+
 struct RegistrationView: View {
+    @StateObject var viewModel: RegistrationViewModel
+    init() {
+        _viewModel = StateObject(wrappedValue: RegistrationViewModel())
+    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+        Text(viewModel.mainTitle)
+            .padding()
+            MyTextField(placeHolder: "Name...", text: $viewModel.typedName)
+            MyTextField(placeHolder: "Surname...", text: $viewModel.typedSurname)
+            MyTextField(placeHolder: "Email...", text: $viewModel.typedEmail)
+            MyTextField(placeHolder: "Password...", text: $viewModel.typedPassword)
+            MyTextField(placeHolder: "Repeat Password...", text: $viewModel.typedRepeatedPassword)
+            Toggle(isOn: $viewModel.isChecked){
+                Text("I Agre terms and conditions")
+            }
+            .toggleStyle(CheckboxToggleStyle())
+            Button("Sign Up") {
+               print("SignUp Pressed")
+            }
+            .buttonStyle(MyButton(myColor: viewModel.isChecked ? .black : .blue, myOpacity: viewModel.isChecked ? 1.0 : 0.4))
+    }
     }
 }
-
 #Preview {
     RegistrationView()
 }

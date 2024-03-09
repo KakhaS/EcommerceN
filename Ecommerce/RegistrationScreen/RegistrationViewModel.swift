@@ -7,8 +7,19 @@
 
 import Foundation
 
-struct User {
-    var username: String
-    var email: String
-    var password: String
+
+class RegistrationViewModel: ObservableObject {
+    let mainTitle: String = "Registration form"
+    @Published var isChecked = false
+    @Published var typedName: String = ""
+    @Published var typedSurname: String = ""
+    @Published var typedEmail: String = ""
+    @Published var typedPassword: String = ""
+    @Published var typedRepeatedPassword: String = ""
+    
+    func RegistrationIsPressed() {
+        print("pressed")
+    }
 }
+
+

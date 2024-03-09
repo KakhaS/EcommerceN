@@ -22,18 +22,18 @@ struct LoginView: View {
                 .padding()
             Text(viewModel.mainTitle)
                 .padding()
-            MyTextField(imageName: viewModel.emailLogo, text: "Email...")
-            MyTextField(imageName: viewModel.passwordLogo, text: "Password...")
+            MyTextField(imageName: viewModel.emailLogo, placeHolder: "Email...", text: $viewModel.typedEmail)
+            MyTextField(imageName: viewModel.passwordLogo, placeHolder: "Password...", text: $viewModel.typedPassword)
             Button("SignIn") {
                 print("Sing in Pressed ")
         }
-                    .buttonStyle(MyButton())
+            .buttonStyle(MyButton(myColor: .black, myOpacity: 1.0))
                 Divider()
                     .padding()
                 Button("SignUp") {
                     print("Sign UP ")
                 }
-                .buttonStyle(MyButton())
+                .buttonStyle(MyButton(myColor: .black, myOpacity: 1.0))
             }
             Spacer()
         }
