@@ -9,11 +9,18 @@ import Foundation
 
 class AppData  {
     struct Constant {
+        static let identification = "identification"
         static let userNameKey =  "userNameKey"
         static let passwordKey = "passwordKey"
     }
+    
     static let shared = AppData()
     
+    var identification: Int = 0 {
+        didSet {
+            UserDefaults.standard.setValue(identification, forKey: Constant.identification)
+        }
+    }
     var userName: String {
         didSet {
             UserDefaults.standard.setValue(userName, forKey: Constant.userNameKey)
@@ -28,11 +35,12 @@ class AppData  {
     private init() {
         self.userName = UserDefaults.standard.string(forKey: Constant.userNameKey) ?? ""
         self.password = UserDefaults.standard.string(forKey: Constant.passwordKey) ?? ""
-        
+        self.identification = UserDefaults.standard.integer(forKey: Constant.identification)
     }
 }
 
-class ViewModel: ObservableObject {
+class UserViewModel: ObservableObject {
+    var identification: String = ""
     var userName: String = ""
     var password: String = ""
     
@@ -42,6 +50,7 @@ class ViewModel: ObservableObject {
         }
     }
     func saveUser() {
+        AppData.shared.identification += 1
         AppData.shared.userName = userName
         AppData.shared.password = password
         print("Username has been saved")

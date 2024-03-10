@@ -121,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				A157FD192B9649C3008FD7E1 /* Preview Assets.xcassets */,
+				A157FD162B9649C3008FD7E1 /* Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -138,7 +139,6 @@
 			children = (
 				A157FD2D2B9649C4008FD7E1 /* EcommerceUITests.swift */,
 				A157FD2F2B9649C4008FD7E1 /* EcommerceUITestsLaunchTests.swift */,
-				A157FD162B9649C3008FD7E1 /* Assets.xcassets */,
 			);
 			path = EcommerceUITests;
 			sourceTree = "<group>";

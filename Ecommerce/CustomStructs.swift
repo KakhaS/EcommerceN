@@ -33,7 +33,7 @@ struct MyButton: ButtonStyle {
             .padding()
             .foregroundColor(.white)
             .font(.system(size: 16, weight: .semibold))
-            .frame(width: 150, height: 40)
+            .frame(width: 230, height: 40)
             .background(myColor)
             .cornerRadius(15)
             .opacity(myOpacity)
