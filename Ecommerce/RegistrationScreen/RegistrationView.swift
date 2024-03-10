@@ -19,16 +19,16 @@ struct RegistrationView: View {
             VStack {
                 Text(viewModel.mainTitle)
                     .padding()
-                MyTextField(placeHolder: "Name...", text: $viewModel.typedName)
-                MyTextField(placeHolder: "Surname...", text: $viewModel.typedSurname)
-                MyTextField(placeHolder: "Email...", text: $viewModel.typedEmail)
-                MyTextField(placeHolder: "Password...", text: $viewModel.typedPassword)
-                MyTextField(placeHolder: "Repeat Password...", text: $viewModel.typedRepeatedPassword)
+                MyTextField(placeHolder: viewModel.nameText, text: $viewModel.typedName)
+                MyTextField(placeHolder: viewModel.surnameText, text: $viewModel.typedSurname)
+                MyTextField(placeHolder: viewModel.emailText, text: $viewModel.typedEmail)
+                MyTextField(placeHolder: viewModel.passwordText, text: $viewModel.typedPassword)
+                MyTextField(placeHolder: viewModel.repeatPasswordText, text: $viewModel.typedRepeatedPassword)
                 Toggle(isOn: $viewModel.isChecked){
-                    Text("I Agre terms and conditions")
+                    Text(viewModel.termsConditionsText)
                 }
                 .toggleStyle(CheckboxToggleStyle())
-                Button("Sign Up") {
+                Button(viewModel.signUpText) {
                     print("SignUp Pressed")
                 }
                 .buttonStyle(MyButton(myColor: viewModel.isChecked ? .black : .blue, myOpacity: viewModel.isChecked ? 1.0 : 0.4))

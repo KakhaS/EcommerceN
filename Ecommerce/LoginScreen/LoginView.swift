@@ -28,7 +28,7 @@ struct LoginView: View {
                     NavigationLink {
                    // navigation destination will go here
                     } label: {
-                         Text("Sign in")
+                        Text(viewModel.signInText)
                     }
                     .buttonStyle(MyButton(myColor: .black, myOpacity: 1.0))
                     Divider()
@@ -37,14 +37,20 @@ struct LoginView: View {
                     NavigationLink {
                       RegistrationView()
                     } label: {
-                        Text("Sign up")
+                        Text(viewModel.signUpText)
                     }
                     .buttonStyle(MyButton(myColor: .black, myOpacity: 1.0))
                 }
             Button {
-                // nothing happens
+                viewModel.showingAlert = true
             } label: {
-                Text("Sign in With Apple")
+                HStack {
+                    Image(systemName: viewModel.appleLogo)
+                    Text(viewModel.signInApple)
+                }
+                .alert(isPresented: $viewModel.showingAlert, content: {
+                    Alert(title: Text(viewModel.alerText))
+                })
             } .buttonStyle(MyButton(myColor: .black, myOpacity: 1.0))
             Spacer()
             }
