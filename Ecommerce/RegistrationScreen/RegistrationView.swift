@@ -16,8 +16,8 @@ struct RegistrationView: View {
     
     var body: some View {
         VStack {
-        Text(viewModel.mainTitle)
-            .padding()
+            Text(viewModel.mainTitle)
+                .padding()
             MyTextField(placeHolder: "Name...", text: $viewModel.typedName)
             MyTextField(placeHolder: "Surname...", text: $viewModel.typedSurname)
             MyTextField(placeHolder: "Email...", text: $viewModel.typedEmail)
@@ -28,10 +28,10 @@ struct RegistrationView: View {
             }
             .toggleStyle(CheckboxToggleStyle())
             Button("Sign Up") {
-               print("SignUp Pressed")
+                print("SignUp Pressed")
             }
             .buttonStyle(MyButton(myColor: viewModel.isChecked ? .black : .blue, myOpacity: viewModel.isChecked ? 1.0 : 0.4))
-    }
+        }
     }
 }
 #Preview {

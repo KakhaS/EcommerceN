@@ -31,15 +31,15 @@ struct MyButton: ButtonStyle {
         configuration.label
             .padding()
             .padding()
-                   .foregroundColor(.white)
-                                 .font(.system(size: 16, weight: .semibold))
-                                 .frame(width: 150, height: 40)
-                                 .background(myColor)
-                                 .cornerRadius(15)
-                                 .opacity(myOpacity)
-                        .scaleEffect(configuration.isPressed ? 1.2 : 1)
-                        .animation(.easeOut(duration: 0.2), value: configuration.isPressed)
-                        .padding()
+            .foregroundColor(.white)
+            .font(.system(size: 16, weight: .semibold))
+            .frame(width: 150, height: 40)
+            .background(myColor)
+            .cornerRadius(15)
+            .opacity(myOpacity)
+            .scaleEffect(configuration.isPressed ? 1.2 : 1)
+            .animation(.easeOut(duration: 0.2), value: configuration.isPressed)
+            .padding()
     }
 }
 
@@ -47,7 +47,7 @@ struct MyButton: ButtonStyle {
 struct CheckboxToggleStyle: ToggleStyle {
     func makeBody(configuration: Configuration) -> some View {
         HStack {
- 
+            
             RoundedRectangle(cornerRadius: 5.0)
                 .stroke(lineWidth: 2)
                 .frame(width: 25, height: 25)

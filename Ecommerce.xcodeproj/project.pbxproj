@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A13F0F932B9DD58D0079567D /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13F0F922B9DD58D0079567D /* UserDefaults.swift */; };
 		A157FD132B9649C3008FD7E1 /* EcommerceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A157FD122B9649C3008FD7E1 /* EcommerceApp.swift */; };
 		A157FD152B9649C3008FD7E1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A157FD142B9649C3008FD7E1 /* ContentView.swift */; };
 		A157FD172B9649C3008FD7E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A157FD162B9649C3008FD7E1 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A13F0F922B9DD58D0079567D /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		A157FD0F2B9649C3008FD7E1 /* Ecommerce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ecommerce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A157FD122B9649C3008FD7E1 /* EcommerceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcommerceApp.swift; sourceTree = "<group>"; };
 		A157FD142B9649C3008FD7E1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				A157FD122B9649C3008FD7E1 /* EcommerceApp.swift */,
 				A157FD142B9649C3008FD7E1 /* ContentView.swift */,
 				A19760742B977F14009E7C99 /* CustomStructs.swift */,
+				A13F0F922B9DD58D0079567D /* UserDefaults.swift */,
 				A157FD402B964ACD008FD7E1 /* LoginScreen */,
 				A157FD472B964EAE008FD7E1 /* RegistrationScreen */,
 				A157FD182B9649C3008FD7E1 /* Preview Content */,
@@ -292,6 +295,7 @@
 				A157FD462B964EA9008FD7E1 /* RegistrationViewModel.swift in Sources */,
 				A157FD152B9649C3008FD7E1 /* ContentView.swift in Sources */,
 				A157FD422B964AF0008FD7E1 /* LoginView.swift in Sources */,
+				A13F0F932B9DD58D0079567D /* UserDefaults.swift in Sources */,
 				A157FD132B9649C3008FD7E1 /* EcommerceApp.swift in Sources */,
 				A19760762B977F1A009E7C99 /* CustomStructs.swift in Sources */,
 				A157FD442B964E9E008FD7E1 /* RegistrationView.swift in Sources */,
