@@ -29,7 +29,8 @@ struct RegistrationView: View {
                 }
                 .toggleStyle(CheckboxToggleStyle())
                 Button(viewModel.signUpText) {
-                    print("SignUp Pressed")
+                    UserViewMode().saveUser(email: viewModel.typedEmail, password: viewModel.typedPassword)
+                    print(AppData.shared.userDictionary)
                 }
                 .buttonStyle(MyButton(myColor: viewModel.isChecked ? .black : .blue, myOpacity: viewModel.isChecked ? 1.0 : 0.4))
             }

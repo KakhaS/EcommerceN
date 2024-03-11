@@ -26,7 +26,7 @@ class RegistrationViewModel: ObservableObject {
     @Published var typedRepeatedPassword: String = ""
     
     func RegistrationIsPressed() {
-        UserViewModel().checkUser()
+//        UserViewModel().checkUser()
     }
 }
 

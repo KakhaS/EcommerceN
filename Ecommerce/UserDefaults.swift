@@ -7,52 +7,28 @@
 
 import Foundation
 
-class AppData  {
+
+class AppData {
     struct Constant {
-        static let identification = "identification"
-        static let userNameKey =  "userNameKey"
-        static let passwordKey = "passwordKey"
+        static let myKey =  "key"
     }
     
     static let shared = AppData()
     
-    var identification: Int = 0 {
+    var userDictionary: [String : Any] {
         didSet {
-            UserDefaults.standard.setValue(identification, forKey: Constant.identification)
+            UserDefaults.standard.setValue(userDictionary, forKey: Constant.myKey)
         }
     }
-    var userName: String {
-        didSet {
-            UserDefaults.standard.setValue(userName, forKey: Constant.userNameKey)
-        }
-    }
-    var password: String {
-        didSet {
-            UserDefaults.standard.setValue(password, forKey: Constant.passwordKey)
-        }
-    }
-    
-    private init() {
-        self.userName = UserDefaults.standard.string(forKey: Constant.userNameKey) ?? ""
-        self.password = UserDefaults.standard.string(forKey: Constant.passwordKey) ?? ""
-        self.identification = UserDefaults.standard.integer(forKey: Constant.identification)
+    private init () {
+        self.userDictionary = UserDefaults.standard.dictionary(forKey: Constant.myKey) ?? [:]
     }
 }
 
-class UserViewModel: ObservableObject {
-    var identification: String = ""
-    var userName: String = ""
-    var password: String = ""
-    
-    func checkUser() {
-        if AppData.shared.userName == userName {
-            print("User has found")
+class UserViewMode: ObservableObject {
+    func saveUser(email: String, password: String) {
+        if AppData.shared.userDictionary.index(forKey: email) == nil {
+            AppData.shared.userDictionary.updateValue(email, forKey: password)
         }
-    }
-    func saveUser() {
-        AppData.shared.identification += 1
-        AppData.shared.userName = userName
-        AppData.shared.password = password
-        print("Username has been saved")
     }
 }
