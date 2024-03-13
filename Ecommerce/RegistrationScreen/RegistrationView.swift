@@ -28,9 +28,11 @@ struct RegistrationView: View {
                     Text(viewModel.termsConditionsText)
                 }
                 .toggleStyle(CheckboxToggleStyle())
+                .alert(isPresented: $viewModel.alertIsOff, content: {
+                    Alert(title: Text(viewModel.alertText))
+                })
                 Button(viewModel.signUpText) {
-                    UserViewMode().saveUser(email: viewModel.typedEmail, password: viewModel.typedPassword)
-                    print(AppData.shared.userDictionary)
+                    viewModel.RegistrationIsPressed()
                 }
                 .buttonStyle(MyButton(myColor: viewModel.isChecked ? .black : .blue, myOpacity: viewModel.isChecked ? 1.0 : 0.4))
             }

@@ -13,7 +13,7 @@ struct LoginView: View {
     init() {
         _viewModel = StateObject(wrappedValue: LoginViewModel())
     }
-    
+
     var body: some View {
         NavigationStack {
                 VStack {

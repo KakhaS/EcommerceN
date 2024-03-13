@@ -25,7 +25,7 @@ class AppData {
     }
 }
 
-class UserViewMode: ObservableObject {
+class UserViewModel: ObservableObject {
     func saveUser(email: String, password: String) {
         if AppData.shared.userDictionary.index(forKey: email) == nil {
             AppData.shared.userDictionary.updateValue(email, forKey: password)
