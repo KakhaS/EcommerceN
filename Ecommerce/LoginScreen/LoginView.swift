@@ -9,9 +9,12 @@ import SwiftUI
 
 struct LoginView: View {
     @StateObject var viewModel: LoginViewModel
+    @StateObject var productView: ProductModel
+    @State var products = [ProductModel]()
     
     init() {
         _viewModel = StateObject(wrappedValue: LoginViewModel())
+        _productView = StateObject(wrappedValue: ProductModel())
     }
 
     var body: some View {
@@ -53,8 +56,16 @@ struct LoginView: View {
                 })
             } .buttonStyle(MyButton(myColor: .black, myOpacity: 1.0))
             Spacer()
-            }
-    }
+        }.onAppear(perform: {
+            productView.fetchData()
+            print(productView.products)
+            })
+
+//            NetworkCall().loadData { data  in
+//                self.products = data
+////                print(products)
+//            }
+                   }
 }
 
 

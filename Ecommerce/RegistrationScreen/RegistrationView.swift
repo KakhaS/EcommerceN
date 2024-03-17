@@ -28,9 +28,10 @@ struct RegistrationView: View {
                     Text(viewModel.termsConditionsText)
                 }
                 .toggleStyle(CheckboxToggleStyle())
-                .alert(isPresented: $viewModel.alertIsOff, content: {
+                .alert(isPresented: $viewModel.alertIsOn, content: {
                     Alert(title: Text(viewModel.alertText))
                 })
+                
                 Button(viewModel.signUpText) {
                     viewModel.RegistrationIsPressed()
                 }

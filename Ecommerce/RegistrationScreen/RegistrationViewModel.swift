@@ -18,8 +18,8 @@ class RegistrationViewModel: ObservableObject {
     let repeatPasswordText: String = "Repeat Password..."
     let signUpText: String = "Sign up"
     let termsConditionsText: String = "I Agree Terms & Conditions."
-    let alertText: String = "Please check if Passwords match or Email is in correct format."
-    @Published var alertIsOff: Bool = false
+    let alertText: String = "Please chek Email format & if Passwords match and agree terms and conditions."
+    @Published var alertIsOn: Bool = false
     @Published var isChecked: Bool = false
     @Published var typedName: String = ""
     @Published var typedSurname: String = ""
@@ -28,11 +28,9 @@ class RegistrationViewModel: ObservableObject {
     @Published var typedRepeatedPassword: String = ""
     
     func RegistrationIsPressed() {
-        if validateRegistration() {
+        if validateRegistration() && isChecked {
             UserViewModel().saveUser(email: typedEmail, password: typedPassword)
-        } else {
-            alertIsOff = true
-        }
+        } else { alertIsOn = true }
     }
     
     func validateRegistration() -> Bool {
