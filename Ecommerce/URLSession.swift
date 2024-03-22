@@ -7,6 +7,9 @@
 
 import Foundation
 
+struct Response: Codable {
+    var response: [Products]
+}
 
 struct Products: Codable {
     let id: Int
@@ -22,28 +25,27 @@ struct Products: Codable {
 }
 
 
-class ProductModel: ObservableObject {
-    @Published var products: [Products] = []
-    
-    
-    func fetchData() {
-        let URLString: String =  "https://dummyjson.com/products"
-        guard let url = URL(string: URLString) else { return }
-        
-        let task = URLSession.shared.dataTask(with: url) { [weak self] data, _ , error in
-            guard let data = data, error == nil  else { return }
-            do {
-                let products = try JSONDecoder().decode([Products].self, from: data)
-                DispatchQueue.main.async {
-                    self?.products = products
-                }
-            } catch {
-                print(error)
-            }
-        }
-        task.resume()
-        
-    }
-    
-}
-
+//class ModelLayer {
+//    
+//    
+//    func fetchData() -> Result<[Products], Error> {
+//        let URLString: String =  "https://dummyjson.com/products"
+//        guard let url = URL(string: URLString) else { return }
+//
+//        let task = URLSession.shared.dataTask(with: url) { [weak self] data, _ , error in
+//            guard let data = data, error == nil  else { return }
+//            do {
+//                let products = try JSONDecoder().decode(Response.self, from: data)
+////                DispatchQueue.main.async {
+////                    self?.products = products.response
+////                }
+//            } catch {
+//                print(error)
+//            }
+//        }
+//        task.resume()
+//        
+//    }
+//    
+//}
+//

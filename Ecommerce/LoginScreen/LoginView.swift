@@ -58,7 +58,7 @@ struct LoginView: View {
             Spacer()
         }.onAppear(perform: {
             productView.fetchData()
-            print(productView.products)
+            print()
             })
 
 //            NetworkCall().loadData { data  in
