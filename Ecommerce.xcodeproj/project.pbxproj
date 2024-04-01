@@ -20,9 +20,9 @@
 		A157FD442B964E9E008FD7E1 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A157FD432B964E9E008FD7E1 /* RegistrationView.swift */; };
 		A157FD462B964EA9008FD7E1 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A157FD452B964EA9008FD7E1 /* RegistrationViewModel.swift */; };
 		A19760762B977F1A009E7C99 /* CustomStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19760742B977F14009E7C99 /* CustomStructs.swift */; };
-		A1F5D1182BA33F1E009AEA21 /* URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F5D1172BA33F1E009AEA21 /* URLSession.swift */; };
+		A1F5D1182BA33F1E009AEA21 /* ModelLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F5D1172BA33F1E009AEA21 /* ModelLayer.swift */; };
 		A1F9D88B2BA22F6500EAC70E /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F9D88A2BA22F6500EAC70E /* LandingView.swift */; };
-		A1F9D88E2BA22F7900EAC70E /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F9D88D2BA22F7900EAC70E /* LandingViewController.swift */; };
+		A1F9D88E2BA22F7900EAC70E /* LandingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F9D88D2BA22F7900EAC70E /* LandingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,9 +59,9 @@
 		A157FD432B964E9E008FD7E1 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		A157FD452B964EA9008FD7E1 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		A19760742B977F14009E7C99 /* CustomStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStructs.swift; sourceTree = "<group>"; };
-		A1F5D1172BA33F1E009AEA21 /* URLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSession.swift; sourceTree = "<group>"; };
+		A1F5D1172BA33F1E009AEA21 /* ModelLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelLayer.swift; sourceTree = "<group>"; };
 		A1F9D88A2BA22F6500EAC70E /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
-		A1F9D88D2BA22F7900EAC70E /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
+		A1F9D88D2BA22F7900EAC70E /* LandingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +116,7 @@
 				A157FD142B9649C3008FD7E1 /* ContentView.swift */,
 				A19760742B977F14009E7C99 /* CustomStructs.swift */,
 				A13F0F922B9DD58D0079567D /* UserDefaults.swift */,
-				A1F5D1172BA33F1E009AEA21 /* URLSession.swift */,
+				A1F5D1172BA33F1E009AEA21 /* ModelLayer.swift */,
 				A1F9D88C2BA22F6B00EAC70E /* LandingScreen */,
 				A157FD402B964ACD008FD7E1 /* LoginScreen */,
 				A157FD472B964EAE008FD7E1 /* RegistrationScreen */,
@@ -173,7 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				A1F9D88A2BA22F6500EAC70E /* LandingView.swift */,
-				A1F9D88D2BA22F7900EAC70E /* LandingViewController.swift */,
+				A1F9D88D2BA22F7900EAC70E /* LandingViewModel.swift */,
 			);
 			path = LandingScreen;
 			sourceTree = "<group>";
@@ -310,14 +310,14 @@
 			files = (
 				A1F9D88B2BA22F6500EAC70E /* LandingView.swift in Sources */,
 				A157FD3F2B964AC9008FD7E1 /* LoginViewModel.swift in Sources */,
-				A1F5D1182BA33F1E009AEA21 /* URLSession.swift in Sources */,
+				A1F5D1182BA33F1E009AEA21 /* ModelLayer.swift in Sources */,
 				A157FD462B964EA9008FD7E1 /* RegistrationViewModel.swift in Sources */,
 				A157FD152B9649C3008FD7E1 /* ContentView.swift in Sources */,
 				A157FD422B964AF0008FD7E1 /* LoginView.swift in Sources */,
 				A13F0F932B9DD58D0079567D /* UserDefaults.swift in Sources */,
 				A157FD132B9649C3008FD7E1 /* EcommerceApp.swift in Sources */,
 				A19760762B977F1A009E7C99 /* CustomStructs.swift in Sources */,
-				A1F9D88E2BA22F7900EAC70E /* LandingViewController.swift in Sources */,
+				A1F9D88E2BA22F7900EAC70E /* LandingViewModel.swift in Sources */,
 				A157FD442B964E9E008FD7E1 /* RegistrationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

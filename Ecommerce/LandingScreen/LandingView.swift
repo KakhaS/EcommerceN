@@ -11,16 +11,27 @@ struct LandingView: View {
     @StateObject var viewModel: LandingViewModel
     
     init() {
-    _viewModel = StateObject(wrappedValue: LandingViewModel())
+        _viewModel = StateObject(wrappedValue: LandingViewModel())
     }
     
     var body: some View {
-        HStack {
-            Image(viewModel.mainLogo)
-                .resizable()
-                .frame(width: 150, height: 150)
-                .padding()
+        VStack {
+            if viewModel.isLoading {
+                ProgressView()
+            } else {
+                Image(viewModel.mainLogo)
+                    .resizable()
+                    .frame(width: 150, height: 150)
+                    .padding()
+            }
+            
         }
+//        .task {
+//            await viewModel.fetchMyDataWithAsync()
+//        }
+        .onAppear(perform: {
+            Task{ await viewModel.fetchMyDataWithAsync() }
+        })
     }
 }
 
