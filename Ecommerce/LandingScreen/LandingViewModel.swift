@@ -13,13 +13,14 @@ class LandingViewModel: ObservableObject {
     
     @Published var products: [ContentViewData] = []
     @Published var isLoading: Bool = false
+    @Published var stepCount: Int = 0
     
     private let modelLayer: ModelLayer
     
     init(modelLayer: ModelLayer = ModelLayer()) {
         self.modelLayer = modelLayer
     }
-    
+
     func fetchMyData() {
      isLoading = true
     
@@ -28,6 +29,7 @@ class LandingViewModel: ObservableObject {
             case .success(let data):
                 if let data = data {
                     let viewData = data.compactMap {
+                
                         ContentViewData(id: $0.id ?? 0, brand: $0.brand ?? "No brand name", title: $0.title ?? "no tittle")
                     }
                     DispatchQueue.main.async {

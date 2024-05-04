@@ -72,7 +72,7 @@ class ModelLayer {
         }
        
         do {
-            let (data, response) = try await URLSession.shared.data(from: url)
+            let (data, _) = try await URLSession.shared.data(from: url)
             let decodedData = try JSONDecoder().decode(ProductsContainer.self, from: data)
             return .success(decodedData.products)
         }
