@@ -33,36 +33,36 @@ enum CustomError: Error {
 
 class ModelLayer {
     
-    func fetch(completion: @escaping (Result<[Product]?, CustomError>) -> ()) {
-      let stringUrl = "https://dummyjson.com/products"
-    
-        guard let url = URL(string: stringUrl) else {
-            completion(.failure(.urlIsNil))
-            return
-        }
-        
-        URLSession.shared.dataTask(with: url) { data, _ , error in
-            guard error == nil else {
-                completion(.failure(.urlIsNil))
-                return
-            }
-            
-            guard let data = data else {
-                completion(.failure(.error(with: "Data is not found")))
-                return
-            }
-            
-            do {
-                let response = try JSONDecoder().decode(ProductsContainer.self, from: data)
-                completion(.success(response.products))
-            }
-            catch(let errorText) {
-                print(errorText)
-            }
-            
-        }.resume()
-        
-    }
+//    func fetch(completion: @escaping (Result<[Product]?, CustomError>) -> ()) {
+//      let stringUrl = "https://dummyjson.com/products"
+//    
+//        guard let url = URL(string: stringUrl) else {
+//            completion(.failure(.urlIsNil))
+//            return
+//        }
+//        
+//        URLSession.shared.dataTask(with: url) { data, _ , error in
+//            guard error == nil else {
+//                completion(.failure(.urlIsNil))
+//                return
+//            }
+//            
+//            guard let data = data else {
+//                completion(.failure(.error(with: "Data is not found")))
+//                return
+//            }
+//            
+//            do {
+//                let response = try JSONDecoder().decode(ProductsContainer.self, from: data)
+//                completion(.success(response.products))
+//            }
+//            catch(let errorText) {
+//                print(errorText)
+//            }
+//            
+//        }.resume()
+//        
+//    }
     
     func fetchAsync() async -> Result<[Product]?, CustomError> {
         let stringUrl = "https://dummyjson.com/products"

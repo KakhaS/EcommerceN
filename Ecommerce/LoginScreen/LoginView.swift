@@ -23,8 +23,8 @@ struct LoginView: View {
                         .padding()
                     Text(viewModel.mainTitle)
                         .padding()
-                    MyTextField(imageName: viewModel.emailLogo, placeHolder: "Email...", text: $viewModel.typedEmail)
-                    MyTextField(imageName: viewModel.passwordLogo, placeHolder: "Password...", text: $viewModel.typedPassword)
+                    MyTextField(imageName: viewModel.emailLogo, placeHolder: "Email...", text: $viewModel.typedEmail, isItPassword: false)
+                    MyTextField(imageName: viewModel.passwordLogo, placeHolder: "Password...", text: $viewModel.typedPassword, isItPassword: true)
                     NavigationLink {
                    // navigation destination will go here
                     } label: {

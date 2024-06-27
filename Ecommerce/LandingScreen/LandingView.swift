@@ -19,6 +19,7 @@ struct LandingView: View {
                 ProgressView()
             } else {
                 List {
+                    Text("\(viewModel.products.count)")
                     ForEach(viewModel.products) { product in
                         Section {
                             HStack {

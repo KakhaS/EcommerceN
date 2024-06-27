@@ -12,16 +12,21 @@ struct MyTextField: View {
     var imageName: String?
     var placeHolder: String
     var text: Binding<String>
+    var isItPassword: Bool
     
     var body: some View {
         HStack {
             Image(systemName: imageName ?? "")
-            TextField(placeHolder, text: text)
+            if isItPassword {
+                SecureField(placeHolder, text: text)
+            } else {
+                TextField(placeHolder, text: text )
+            }
+           
         }
         .textFieldStyle(RoundedBorderTextFieldStyle())
         .padding()
     }
-    
 }
 
 struct MyButton: ButtonStyle {

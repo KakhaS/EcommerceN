@@ -19,11 +19,11 @@ struct RegistrationView: View {
             VStack {
                 Text(viewModel.mainTitle)
                     .padding()
-                MyTextField(placeHolder: viewModel.nameText, text: $viewModel.typedName)
-                MyTextField(placeHolder: viewModel.surnameText, text: $viewModel.typedSurname)
-                MyTextField(placeHolder: viewModel.emailText, text: $viewModel.typedEmail)
-                MyTextField(placeHolder: viewModel.passwordText, text: $viewModel.typedPassword)
-                MyTextField(placeHolder: viewModel.repeatPasswordText, text: $viewModel.typedRepeatedPassword)
+                MyTextField(placeHolder: viewModel.nameText, text: $viewModel.typedName, isItPassword: false)
+                MyTextField(placeHolder: viewModel.surnameText, text: $viewModel.typedSurname, isItPassword: false)
+                MyTextField(placeHolder: viewModel.emailText, text: $viewModel.typedEmail, isItPassword: false)
+                MyTextField(placeHolder: viewModel.passwordText, text: $viewModel.typedPassword, isItPassword: true)
+                MyTextField(placeHolder: viewModel.repeatPasswordText, text: $viewModel.typedRepeatedPassword, isItPassword: true)
                 Toggle(isOn: $viewModel.isChecked){
                     Text(viewModel.termsConditionsText)
                 }

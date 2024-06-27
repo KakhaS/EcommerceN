@@ -21,32 +21,32 @@ class LandingViewModel: ObservableObject {
         self.modelLayer = modelLayer
     }
     
-    //    func fetchMyData() {
-    //     isLoading = true
-    //
-    //        modelLayer.fetch {  result in
-    //            switch result {
-    //            case .success(let data):
-    //                if let data = data {
-    //                    let viewData = data.compactMap {
-    //
-    //                        ContentViewData(id: $0.id ?? 0, brand: $0.brand ?? "No brand name", description: $0.description ?? "Description not available yet", title: $0.title ?? "no tittle")
-    //                    }
-    //                    DispatchQueue.main.async {
-    //                        self.products = viewData
-    //                        self.isLoading = false
-    //
-    //                    }
-    //                } else  { (print("data is nill in LandingViewModel")) }
-    //            case .failure(let errorText):
-    //                DispatchQueue.main.async {
-    //                    self.isLoading = false
-    //                }
-    //                print(errorText)
-    //            }
-    //
-    //        }
-    //    }
+//        func fetchMyData() {
+//         isLoading = true
+//    
+//            modelLayer.fetch {  result in
+//                switch result {
+//                case .success(let data):
+//                    if let data = data {
+//                        let viewData = data.compactMap {
+//    
+//                            ContentViewData(id: $0.id ?? 0, brand: $0.brand ?? "No brand name", description: $0.description ?? "Description not available yet", title: $0.title ?? "no tittle")
+//                        }
+//                        DispatchQueue.main.async {
+//                            self.products = viewData
+//                            self.isLoading = false
+//    
+//                        }
+//                    } else  { (print("data is nill in LandingViewModel")) }
+//                case .failure(let errorText):
+//                    DispatchQueue.main.async {
+//                        self.isLoading = false
+//                    }
+//                    print(errorText)
+//                }
+//    
+//            }
+//        }
     
     func fetchMyDataWithAsync() async {
         isLoading = true
